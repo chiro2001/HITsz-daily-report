@@ -22,5 +22,5 @@ name: hitsz-daily-report-vpc # [必选]组件实例名称
 inputs:
   region: ${env:REGION} # 部署目标地区。 更多参考 https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8
   zone: ${env:ZONE} # 所在地区的区域
-  vpcName: serverless # 实例名称
-  subnetName: serverless # 子网的名称
+  vpcName: hitsz-daily-report # 实例名称
+  subnetName: hitsz-daily-report # 子网的名称

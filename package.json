@@ -1,5 +1,5 @@
 {
-  "name": "tencent-fullstack",
+  "name": "hitsz-daily-reporter",
   "version": "1.1.0",
   "description": "Fullstack with serverless db",
   "main": "index.js",

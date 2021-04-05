@@ -1,3 +1,6 @@
+from reporter.config import config
+
 class ReporterDatabase:
     def __init__(self, location: str = None):
-        pass
+        if location is None:
+            location = config.data['postgresql']

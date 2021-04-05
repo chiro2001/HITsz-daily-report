@@ -30,7 +30,7 @@ class Config:
                 "upgradable": True,
                 "api_prefix": "/epidemic"
             },
-            # 'postgresql': os.environ.get()
+            'postgresql': os.environ.get('PG_CONNECT_STRING', 'tcp://postgres:1234@localhost/gbk')
         }
         self.data = self.data_default
         self.lock = threading.RLock()

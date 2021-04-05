@@ -36,6 +36,7 @@ def get_apis() -> dict:
 def index():
     apis = {}
     for task in tasks.get_tasks():
+        logger.info(f"trying to import {task}")
         try:
             task_apis = task.get_apis()
             task_apis_modified = {}

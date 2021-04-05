@@ -21,13 +21,13 @@ name: hitsz-daily-report-api # [必选]组件实例名称
 # 更多内容请查看：https://github.com/serverless-components/tencent-express/blob/master/docs/configure.md
 inputs:
   src: # 执行目录 更多配置请参考配置文档
-    hook: 'pip install -r requirements.txt -t ./'
+    hook: 'pip install -r ./api/requirements.txt -t ./api/'
     dist: ./
     exclude:
-      - .env
+      - .env # 排除
   functionName: ${name} # 云函数名称。使用此配置文件中的name（组件实例名称）
   region: ${env:REGION} # 部署目标地区。 更多参考 https://cloud.tencent.com/document/api/583/17238#.E5.9C.B0.E5.9F.9F.E5.88.97.E8.A1.A8
-  runtime: Python3.9 # 运行环境。[Nodejs10.15, Nodejs12.16]
+  runtime: Python3.6 # 运行环境
   functionConf: # 函数配置
     timeout: 30 # 超时时间，单位秒
     vpcConfig: # 私有网络配置
