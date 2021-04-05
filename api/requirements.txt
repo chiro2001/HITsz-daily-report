@@ -1,0 +1,6 @@
+Flask
+werkzeug
+lxml
+requests
+flask_cors
+colorlog
