@@ -22,14 +22,6 @@ class Config:
             "debug": True,
             "version": 0.1,
             "epidemic-report-version": 0.1,
-            "api_server": {
-                "upgradable": True,
-                "api_prefix": "/"
-            },
-            "epidemic-report": {
-                "upgradable": True,
-                "api_prefix": "/epidemic"
-            },
             'postgresql': os.environ.get('PG_CONNECT_STRING', 'tcp://postgres:1234@localhost/gbk')
         }
         self.data = self.data_default

@@ -16,12 +16,11 @@ app = Flask(__name__)
 handle_request_exceptions(app)
 # 设置可跨域访问
 CORS(app, supports_credentials=True)
-api_prefix = config.data['api_server']['api_prefix']
 
 
 def get_apis() -> dict:
     return {
-        api_prefix: {
+        '/': {
             "description": 'Index and description of the API',
             'method': ['GET'],
             'args': {},
@@ -41,7 +40,7 @@ def index():
             task_apis = task.get_apis()
             task_apis_modified = {}
             for api in task_apis:
-                task_apis_modified[api_prefix + task.app.name + api] = task_apis[api]
+                task_apis_modified[task.app.name + api] = task_apis[api]
             apis.update(task_apis_modified)
         except AttributeError:
             logger.warning(f'{task.app.name} has no get_apis function')

@@ -2,10 +2,10 @@ import importlib
 from reporter.utils import logger
 
 task_names = [
-    'epidemic-report'
+    'epidemic'
 ]
 task_modules = {
-    'epidemic-report': 'app_epidemic_report'
+    'epidemic': 'app_epidemic_report'
 }
 
 
@@ -20,8 +20,8 @@ def get_tasks() -> list:
         try:
             a = importlib.import_module(f'tasks.{module_name}')
             tasks.append(a)
-        except ImportError:
-            logger.error(f'Cannot import module tasks.{module_name}')
+        except ImportError as e:
+            logger.error(f'Cannot import module tasks.{module_name}! {e}')
             continue
     return tasks
 

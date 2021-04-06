@@ -8,16 +8,17 @@ from reporter.config import config
 from reporter.utils import logger, handle_request_exceptions
 from tasks import epidemic_report
 
-app_name = 'epidemic-report'
+app_name = 'epidemic'
 app = Flask(app_name)
 CORS(app, supports_credentials=True)
 handle_request_exceptions(app)
+
 
 def get_apis() -> dict:
     return {
         '/': {
             "description": 'Index and description of the Epidemic Report API',
-            'method': ['GET'],
+            'methods': ['GET'],
             'args': {},
             'rets': {
                 'apis': "Lists of API urls and args"
@@ -52,7 +53,7 @@ def index():
     })
 
 
-@app.route('/report', methods=['GET', 'POST'])
+@app.route('/report/', methods=['GET', 'POST'])
 def report():
     if request.method == 'GET':
         args = request.args

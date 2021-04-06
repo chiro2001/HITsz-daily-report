@@ -2,7 +2,12 @@
 # -*- coding: utf-8 -*-
 import requests
 from requests.utils import dict_from_cookiejar
-from lxml import etree
+# Chiro: 添加操作系统判断兼容
+import platform
+if platform.system() == 'Windows':
+    from lxml import etree
+else:
+    from lxml_linux import etree
 import json
 import random
 import datetime

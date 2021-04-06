@@ -11,7 +11,7 @@ apps = tasks.get_apps()
 apps_path = {}
 for a in apps:
     try:
-        apps_path[config.data[a.name]['api_prefix']] = a
+        apps_path[a.name] = a
     except KeyError:
         logger.error(f'Cannot parse module {a}')
 # 中间件
